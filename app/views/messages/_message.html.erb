@@ -1,0 +1,17 @@
+<div class="message <%= 'align-self-end' if message.user == current_user %>"
+     data-sender-id="<%= message.user.id %>"
+>
+  <div class="message--header">
+    <span class="message--author">
+      <%= message.user.email %>
+    </span>
+    <span class="message--time">
+      <%= message.message_time %>
+    </span>
+  </div>
+  <div class="message--text">
+    <% message.body.lines.each do |line| %>
+      <p><%= line %></p>
+    <% end %>
+  </div>
+</div>

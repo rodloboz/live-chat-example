@@ -4,6 +4,12 @@
     <title>LiveChatExample</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= tag :meta, name: 'current',
+                   content: current_user.id,
+                   data: {
+                      email: current_user.email,
+                    } if user_signed_in?
+    %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>

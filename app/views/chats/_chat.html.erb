@@ -1,0 +1,14 @@
+<% other_user = chat.other_user(current_user) %>
+<%= link_to chat do %>
+  <div class="row chat">
+    <% if chat.messages.any? %>
+      <div class="col-md-4">
+        <%= other_user.full_name %>
+        <%= chat.messages.last.message_time %>
+      </div>
+      <div class="col-md-8">
+        <%= chat.messages.last.body %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
